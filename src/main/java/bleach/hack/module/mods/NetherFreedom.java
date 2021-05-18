@@ -143,12 +143,7 @@ public class NetherFreedom extends Module {
             
             Item mainhandItem = mc.player.getMainHandStack().getItem();
             
-            if(!(mainhandItem == Items.NETHERITE_PICKAXE ||
-                    mainhandItem == Items.DIAMOND_PICKAXE ||
-                    mainhandItem == Items.IRON_PICKAXE ||
-                    mainhandItem == Items.STONE_PICKAXE ||
-                    mainhandItem == Items.WOODEN_PICKAXE ||
-                    mainhandItem == Items.GOLDEN_PICKAXE) && getSetting(9).asToggle().state){
+            if(!(mainhandItem instanceof PickaxeItem) && getSetting(9).asToggle().state){
                 return;
             }
             mc.interactionManager.updateBlockBreakingProgress(pos.getKey(), pos.getValue().getRight());
